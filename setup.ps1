@@ -71,7 +71,8 @@ else {
 # Get-ChildItem -Path $HOME\AppData\Local\nvim | Where-Object { $_.Name -ne "neovim" } | Remove-Item -Force -Recurse
 # Get-ChildItem -Path $HOME\AppData\Local\nvim\neovim | Move-Item -Destination $HOME\AppData\Local\nvim -Force -Recurse
 # Remove-Item -Path $HOME\AppData\Local\nvim\neovim -Force -Recurse
-git clone https://github.com/phillychi3/cutenvim $HOME\AppData\Local\nvim --depth 1
+
+# git clone https://github.com/phillychi3/cutenvim $HOME\AppData\Local\nvim --depth 1
 
 
 Enable-UAC
