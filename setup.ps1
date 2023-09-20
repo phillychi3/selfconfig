@@ -44,7 +44,7 @@ else {
 # 終端機 (穩定/一般版本) ： %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
 # 終端機 (預覽版本) ： %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json
 # 終端機 (未封裝：) ：) ： %LOCALAPPDATA%\Microsoft\Windows Terminal\settings.json
-if (!(Test-Path -Path ($env:LOCALAPPDATA + "\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -PathType Leaf))) {
+if (!(Test-Path -Path ($env:LOCALAPPDATA + "\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json") -PathType Leaf)) {
     try {
         Invoke-RestMethod https://github.com/phillychi3/selfconfig/raw/main/powershell/setting.json -OutFile ($env:LOCALAPPDATA + "\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json")
         Write-Host "created windows terminal settings success"
