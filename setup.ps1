@@ -1,29 +1,22 @@
 Disable-UAC
-Packeges = @{
-    "vscode",
-    "git",
-    "7zip.install",
-    "terminal-icons.powershell",
-    "poshgit",
-    "gsudo",
-    "notepadplusplus.install",
-    "nodejs",
-    "vlc-nightly",
-    "microsoft-windows-terminal"
-    "oh-my-posh",
-    "neovim"
-}
-
-Fontes = @(
-    "nerd-fonts-hack",
-    "nerd-fonts-firacode"
-)
 
 choco upgrade -y all
-choco install -y $Chocolatey_Packeges
-choco install -y $Fontes
+choco install -y vscode
+choco install -y git
+choco install -y 7zip.install
+choco install -y terminal-icons.powershell
+choco install -y poshgit
+choco install -y gsudo
+choco install -y notepadplusplus.install
+choco install -y nodejs
+choco install -y vlc-nightly
+choco install -y microsoft-windows-terminal
+choco install -y oh-my-posh
+choco install -y neovim
+choco install -y nerd-fonts-hack
+choco install -y nerd-fonts-firacode
 choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
-executeScript
+
 npm i -g @antfu/ni
 
 
