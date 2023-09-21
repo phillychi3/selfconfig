@@ -4,8 +4,8 @@ choco upgrade -y all
 choco install -y vscode
 choco install -y git
 choco install -y 7zip.install
-choco install -y terminal-icons.powershell
-choco install -y poshgit
+# choco install -y terminal-icons.powershell
+# choco install -y poshgit
 choco install -y gsudo
 choco install -y notepadplusplus.install
 choco install -y nodejs
@@ -16,7 +16,8 @@ choco install -y neovim
 choco install -y nerd-fonts-hack
 choco install -y nerd-fonts-firacode
 choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
-
+PowerShellGet\Install-Module Terminal-Icons -Scope CurrentUser -Force
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 npm i -g @antfu/ni
 
 
