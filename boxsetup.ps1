@@ -1,22 +1,8 @@
-param([switch]$Elevated)
-
-function Test-Admin {
-    $currentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent())
-    $currentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
-}
-
-if ((Test-Admin) -eq $false)  {
-    if ($elevated) {
-        Write-Host "Error !! You need to run this script as an Administrator !!"
-    } else {
-        Start-Process powershell.exe -Verb RunAs -ArgumentList ('-noprofile -noexit -file "{0}" -elevated' -f ($myinvocation.MyCommand.Definition))
-    }
-    exit
-}
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+Disable-UAC
 
 choco upgrade -y all
 choco install -y vscode
+choco install -y git
 choco install -y 7zip.install
 # choco install -y terminal-icons.powershell
 # choco install -y poshgit
@@ -83,3 +69,4 @@ else {
 # git clone https://github.com/phillychi3/cutenvim $HOME\AppData\Local\nvim --depth 1
 
 
+Enable-UAC
