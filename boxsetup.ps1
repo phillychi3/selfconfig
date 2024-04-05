@@ -18,6 +18,7 @@ choco install -y nerd-fonts-firacode
 choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
 PowerShellGet\Install-Module Terminal-Icons -Scope CurrentUser -Force
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
+PowerShellGet\Install-Module PSReadLine -Scope CurrentUser -AllowPrerelease -Force
 npm i -g @antfu/ni
 
 
